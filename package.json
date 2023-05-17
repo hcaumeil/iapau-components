@@ -9,7 +9,8 @@
     "./*": "./src/styles/*.css"
   },
   "files": [
-    "src/styles/default-theme.css"
+    "src/styles/default-theme.css",
+    "dist/src/"
   ],
   "scripts": {
     "analyze": "cem analyze --litelement",
