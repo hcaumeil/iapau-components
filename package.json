@@ -5,8 +5,12 @@
   "main": "dist/src/components/index.js",
   "module": "dist/src/components/*/*.js",
   "exports": {
-    "./*": "./dist/src/components/*/*.js"
+    "./*": "./dist/src/components/*/*.js",
+    "./*": "./src/styles/*.css"
   },
+  "files": [
+    "src/styles/default-theme.css"
+  ],
   "scripts": {
     "analyze": "cem analyze --litelement",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
