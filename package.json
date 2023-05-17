@@ -6,7 +6,7 @@
   "module": "dist/src/components/*/*.js",
   "exports": {
     "./*": "./dist/src/components/*/*.js",
-    "./css/": "./src/styles/*.css"
+    "./css/*": "./src/styles/*"
   },
   "files": [
     "src/styles/default-theme.css",
