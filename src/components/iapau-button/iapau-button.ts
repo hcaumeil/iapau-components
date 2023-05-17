@@ -1,11 +1,7 @@
-import { html, css, LitElement } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 
-export default class Button extends LitElement {
-
-
-
-
+export default class IapauButton extends LitElement {
   static styles = css`
     button {
       display: block;
@@ -17,18 +13,24 @@ export default class Button extends LitElement {
     }
   `;
 
+  @property({ type: Boolean })
+  borderSolid = true;
 
-  @property({ type: Boolean }) borderSolid = true;
+  @property({ type: String })
+  label = 'Cliquez ici';
 
-  @property({ type: String }) label = 'Cliquez ici';
+  @property({ type: String })
+  textColor = '#000';
 
-  @property({ type: String }) textColor = '#000';
-
-  @property({ type: String }) backgroundColor = '#000';
+  @property({ type: String })
+  backgroundColor = '#000';
 
   updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('borderSolid')) {
-      this.style.setProperty('--button-border', this.borderSolid ? '1px solid' : 'none');
+      this.style.setProperty(
+        '--button-border',
+        this.borderSolid ? '1px solid' : 'none'
+      );
     }
   }
 
@@ -36,11 +38,12 @@ export default class Button extends LitElement {
     return html`
       <button
         style="--button-text-color: ${this.textColor};
-        --button-background-color: ${this.backgroundColor}">
+        --button-background-color: ${this.backgroundColor}"
+      >
         ${this.label}
       </button>
     `;
   }
 }
 
-window.customElements.define('custom-button', Button);
+window.customElements.define('iapau-button', IapauButton);
