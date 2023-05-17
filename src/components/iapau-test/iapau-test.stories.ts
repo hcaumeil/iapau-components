@@ -55,6 +55,7 @@ export const SlottedContent = Template.bind({});
 SlottedContent.args = {
   slot: html`<p>Slotted content</p>`,
 };
+
 SlottedContent.argTypes = {
   slot: { table: { disable: true } },
 };
