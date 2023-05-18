@@ -10,7 +10,7 @@ export default class IapauButton extends LitElement {
       color: var(--cc-color-bg-default);
       background-color: var(--cc-color-bg-primary);
       border-radius: 8px;
-      transition: color 0.5s;
+      transition: color 0.8s;
       font-family: var(--cc-font-family-text);
     }
 
