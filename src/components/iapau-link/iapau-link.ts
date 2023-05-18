@@ -5,8 +5,9 @@ export default class IapauLink extends LitElement {
   static styles = css`
     a {
       text-decoration: none;
-      color: var(--cc-color-bg-default);
+      color: var(--cc-color-text-primary);
       transition: color 0.5s;
+      font-family: var(--cc-font-family-text);
     }
     a:hover{
       color: grey;

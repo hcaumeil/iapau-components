@@ -1,4 +1,8 @@
 :root {
   --cc-color-bg-default: #ffffff;
   --cc-color-bg-primary: #0e8769;
+  /* a modifier */
+  --cc-color-text-primary: black;
+  --cc-font-family-text:  Arial, sans-serif;
+
 }

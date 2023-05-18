@@ -11,6 +11,7 @@ export default class IapauButton extends LitElement {
       background-color: var(--cc-color-bg-primary);
       border-radius: 8px;
       transition: color 0.5s;
+      font-family: var(--cc-font-family-text);
     }
 
     button:hover{
@@ -25,7 +26,7 @@ export default class IapauButton extends LitElement {
   label = 'Cliquez ici';
 
   @property({ type: String })
-  textColor = '--cc-color-bg-default';
+  textColor = '--cc-color-text-primary';
 
   @property({ type: String })
   backgroundColor = '--cc-color-bg-primary';
