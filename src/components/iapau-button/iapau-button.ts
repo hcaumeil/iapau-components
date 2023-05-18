@@ -7,8 +7,8 @@ export default class IapauButton extends LitElement {
       display: block;
       padding: 10px;
       border: var(--button-border);
-      color: var(--button-text-color, #000);
-      background-color: var(--button-background-color, #fff);
+      color: var(--cc-color-bg-default);
+      background-color: var(--cc-color-bg-primary);
       border-radius: 8px;
     }
   `;
@@ -20,10 +20,10 @@ export default class IapauButton extends LitElement {
   label = 'Cliquez ici';
 
   @property({ type: String })
-  textColor = '#000';
+  textColor = '--cc-color-bg-default';
 
   @property({ type: String })
-  backgroundColor = '#000';
+  backgroundColor = '--cc-color-bg-primary';
 
   updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('borderSolid')) {
@@ -37,8 +37,8 @@ export default class IapauButton extends LitElement {
   render() {
     return html`
       <button
-        style="--button-text-color: ${this.textColor};
-        --button-background-color: ${this.backgroundColor}"
+        style="--cc-color-bg-default: ${this.textColor};
+        --cc-color-bg-primary: ${this.backgroundColor}"
       >
         ${this.label}
       </button>

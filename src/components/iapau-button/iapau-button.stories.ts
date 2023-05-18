@@ -27,8 +27,8 @@ interface ArgTypes {
 
 const Template: Story<ArgTypes> = ({
   title = 'Test clique',
-  backgroundColor,
-  textColor,
+  backgroundColor = 'rgba(14, 135, 105, 1)',
+  textColor ='rgba(255, 255, 255, 1)',
   borderSolid,
 }: ArgTypes) => html`
   <iapau-button
