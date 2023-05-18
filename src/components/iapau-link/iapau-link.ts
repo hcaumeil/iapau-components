@@ -6,6 +6,7 @@ export default class IapauLink extends LitElement {
     a {
       text-decoration: none;
       color: var(--cc-color-bg-default);
+      transition: color 0.5s;
     }
     a:hover{
       color: grey;

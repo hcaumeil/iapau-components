@@ -10,6 +10,11 @@ export default class IapauButton extends LitElement {
       color: var(--cc-color-bg-default);
       background-color: var(--cc-color-bg-primary);
       border-radius: 8px;
+      transition: color 0.5s;
+    }
+
+    button:hover{
+      color: grey;
     }
   `;
 
