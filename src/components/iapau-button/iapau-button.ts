@@ -42,7 +42,7 @@ export default class IapauButton extends LitElement {
       border-radius: 0.5rem;
       transition: color 0.8s;
       font-family: var(--iapau-font-family-default);
-      font-weight: bold;
+      font-weight: 600;
     }
 
     button:hover{
