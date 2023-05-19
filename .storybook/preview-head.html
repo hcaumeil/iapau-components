@@ -4,4 +4,23 @@
   body {
     font-family: var(--iapau-font-family-default);
   }
+
+  .story-shadow-container {
+    /* Sorry Storybook but our components aren't dark mode ready yet ;-) */
+    background-color: #fff;
+    box-shadow: 0 0 0.25em #ddd;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0 auto;
+    max-width: 72em;
+    padding: 1em;
+    width: 100%;
+  }
+
+  .story-shadow-container[display-mode="flex-wrap"] {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 </style>
