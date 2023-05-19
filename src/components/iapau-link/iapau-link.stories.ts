@@ -1,36 +1,53 @@
-import { html, TemplateResult } from 'lit';
-import './iapau-link.js';
-
-import type { Story } from "../../stories/lib.js";
+import "./iapau-link.js";
+import { makeStory } from "../../stories/lib.js";
 
 export default {
-  title: '<iapau-link>',
-  component: 'iapau-link',
+  title: "<iapau-link>",
+  component: "iapau-link",
   argTypes: {
-    href: { control: 'text' },
-    textColor: { control: 'color' },
-    title: { control: 'text' },
+    href: {
+      control: "text",
+      table: {
+        defaultValue: { summary: "." },
+      },
+    },
+    newTab: {
+      control: "boolean",
+      table: {
+        defaultValue: { summary: false },
+      },
+    },
+    active: {
+      control: "boolean",
+      table: {
+        defaultValue: { summary: false },
+      },
+    },
   },
 };
 
-interface ArgTypes {
-  href?: string;
-  title?: string;
-  textColor?: string;
-}
+const baseItems = [{ innerHTML: "Link", href: "." }];
 
-const Template: Story<ArgTypes> = ({
-  href = 'Test clique',
-  title = 'Test clique',
-  textColor ='black'
-  }: ArgTypes) => html`
-  <iapau-link
-    .href=${href}
-    .label=${title}
-    .textColor=${textColor}
-  >
+const conf = {
+  component: "iapau-link",
+  displayMode: "flex-wrap",
+  css: `
+    :host {
+      align-items: center;
+    }
+  `,
+};
 
-  </iapau-link>
-`;
+export const Default = makeStory(conf, {
+  items: baseItems,
+});
 
-export const Basic = Template.bind({});
+export const active = makeStory(conf, {
+  docs: `Draws the user's eye to the active nature of this link`,
+  items: baseItems.map((e) => ({ ...e, active: true })),
+});
+
+export const newTab = makeStory(conf, {
+  docs: `Open link in a new tab`,
+  items: baseItems.map((e) => ({ ...e, newTab: true })),
+});

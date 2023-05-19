@@ -1,7 +1,10 @@
 :root {
   --iapau-color-bg-default: #ffffff;
   --iapau-color-bg-primary: #0e8769;
-  /* a modifier */
   --iapau-color-text-primary: black;
   --iapau-font-family-default: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
+
+  --iapau-color-link: rgba(0, 0, 0, 0.6);
+  --iapau-color-link-active: #2EA3F2;
+  --iapau-font-family-link: Open Sans, Arial, sans-serif;
 }
