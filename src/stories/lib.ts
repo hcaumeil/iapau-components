@@ -1,13 +1,4 @@
 import { TemplateResult } from "lit";
-import customElementsManifest from "../../custom-elements.json" assert {
-  type: "json",
-};
-
-export interface Story<T> {
-  (args: T): TemplateResult;
-  args?: Partial<T>;
-  argTypes?: Record<string, unknown>;
-}
 
 function normalize(text: string) {
   return text.toLowerCase().replace(/[-:]/g, "");
