@@ -5,9 +5,9 @@ export default class IapauLink extends LitElement {
   static styles = css`
     a {
       text-decoration: none;
-      color: var(--cc-color-text-primary);
+      color: var(--iapau-color-text-primary);
       transition: color 0.5s;
-      font-family: var(--cc-font-family-text);
+      font-family: var(--iapau-font-family-text);
     }
     a:hover{
       color: grey;
@@ -15,7 +15,7 @@ export default class IapauLink extends LitElement {
   `;
 
   @property({ type: String })
-  textColor = '--cc-color-bg-default';
+  textColor = '--iapau-color-bg-default';
 
   @property({ type: String })
   href = 'Cliquez ici';
@@ -26,7 +26,7 @@ export default class IapauLink extends LitElement {
 
   render() {
     return html`
-      <a href='${this.href}' style="--cc-color-bg-default: ${this.textColor}">
+      <a href='${this.href}' style="--iapau-color-bg-default: ${this.textColor}">
         ${this.label}
       </a>
     `;

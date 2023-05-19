@@ -7,11 +7,11 @@ export default class IapauButton extends LitElement {
       display: block;
       padding: 10px;
       border: var(--button-border);
-      color: var(--cc-color-bg-default);
-      background-color: var(--cc-color-bg-primary);
+      color: var(--iapau-color-bg-default);
+      background-color: var(--iapau-color-bg-primary);
       border-radius: 8px;
       transition: color 0.8s;
-      font-family: var(--cc-font-family-text);
+      font-family: var(--iapau-font-family-text);
     }
 
     button:hover{
@@ -26,10 +26,10 @@ export default class IapauButton extends LitElement {
   label = 'Cliquez ici';
 
   @property({ type: String })
-  textColor = '--cc-color-text-primary';
+  textColor = '--iapau-color-text-primary';
 
   @property({ type: String })
-  backgroundColor = '--cc-color-bg-primary';
+  backgroundColor = '--iapau-color-bg-primary';
 
   updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('borderSolid')) {
@@ -43,8 +43,8 @@ export default class IapauButton extends LitElement {
   render() {
     return html`
       <button
-        style="--cc-color-bg-default: ${this.textColor};
-        --cc-color-bg-primary: ${this.backgroundColor}"
+        style="--iapau-color-bg-default: ${this.textColor};
+        --iapau-color-bg-primary: ${this.backgroundColor}"
       >
         ${this.label}
       </button>

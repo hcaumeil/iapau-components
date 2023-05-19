@@ -1,8 +1,7 @@
 :root {
-  --cc-color-bg-default: #ffffff;
-  --cc-color-bg-primary: #0e8769;
+  --iapau-color-bg-default: #ffffff;
+  --iapau-color-bg-primary: #0e8769;
   /* a modifier */
-  --cc-color-text-primary: black;
-  --cc-font-family-text:  Arial, sans-serif;
-
+  --iapau-color-text-primary: black;
+  --iapau-font-family-default: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
 }
