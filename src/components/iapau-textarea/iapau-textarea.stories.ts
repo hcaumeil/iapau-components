@@ -1,7 +1,7 @@
 import { html, TemplateResult } from "lit";
 import "./iapau-textarea";
 
-import type { Story } from "../../stories/lib.js";
+import { makeStory } from "../../stories/lib.js";
 
 export default {
   title: "<iapau-textarea>",
@@ -13,24 +13,18 @@ export default {
   },
 };
 
-interface ArgTypes {
-  placeholder?: string;
-  cols?: number;
-  rows?: number;
-}
+const baseItems = [{ placeholder: "Test clique", cols: 40, rows: 1 }];
 
-const Template: Story<ArgTypes> = ({
-  placeholder = "Test clique",
-  cols = 40,
-  rows = 1,
-}: ArgTypes) =>
-  html`
-  <iapau-textarea
-    .placeholder=${placeholder}
-    .cols=${cols}
-    .rows=${rows}
-  >
-  </iapau-textarea>
-`;
+const conf = {
+  component: "iapau-textarea",
+  displayMode: "flex-wrap",
+  css: `
+    :host {
+      align-items: center;
+    }
+  `,
+};
 
-export const Basic = Template.bind({});
+export const Default = makeStory(conf, {
+  items: baseItems,
+});

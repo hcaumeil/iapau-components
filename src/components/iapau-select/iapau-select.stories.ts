@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 import './iapau-select.js';
 
-import type { Story } from "../../stories/lib.js";
+import { makeStory } from "../../stories/lib.js";
 
 export default {
   title: '<iapau-select>',
@@ -11,18 +11,18 @@ export default {
   },
 };
 
-interface ArgTypes {
-  options?: object;
-}
+const baseItems = [{ options: ["option 1", "option 2", "option 3"]}];
 
-
-const Template: Story<ArgTypes> = ({options}) => html`
-  <iapau-select .options=${options}></iapau-select>
-`;
-
-export const Basic = Template.bind({});
-Basic.args = {
-  options: ["option1", "option2", "option3"],
+const conf = {
+  component: "iapau-select",
+  displayMode: "flex-wrap",
+  css: `
+    :host {
+      align-items: center;
+    }
+  `,
 };
 
-
+export const Default = makeStory(conf, {
+  items: baseItems,
+});
