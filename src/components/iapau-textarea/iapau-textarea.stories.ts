@@ -1,37 +1,30 @@
-import { html, TemplateResult } from 'lit';
-import './iapau-textarea';
+import { html, TemplateResult } from "lit";
+import "./iapau-textarea";
 
+import type { Story } from "../../stories/lib.js";
 
 export default {
-  title: '<iapau-textarea>',
-  component: 'iapau-textarea',
+  title: "<iapau-textarea>",
+  component: "iapau-textarea",
   argTypes: {
-    placeholder: { control: 'text' },
-    cols: { control: 'number' },
-    rows: { control: 'number' },
+    placeholder: { control: "text" },
+    cols: { control: "number" },
+    rows: { control: "number" },
   },
 };
-
-interface Story<T> {
-  (args: T): TemplateResult;
-  args?: Partial<T>;
-  argTypes?: Record<string, unknown>;
-}
-
 
 interface ArgTypes {
   placeholder?: string;
   cols?: number;
   rows?: number;
-
 }
 
 const Template: Story<ArgTypes> = ({
-  placeholder = 'Test clique',
+  placeholder = "Test clique",
   cols = 40,
   rows = 1,
-
-  }: ArgTypes) => html`
+}: ArgTypes) =>
+  html`
   <iapau-textarea
     .placeholder=${placeholder}
     .cols=${cols}
@@ -41,4 +34,3 @@ const Template: Story<ArgTypes> = ({
 `;
 
 export const Basic = Template.bind({});
-

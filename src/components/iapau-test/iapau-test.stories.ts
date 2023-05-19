@@ -1,6 +1,8 @@
 import { html, TemplateResult } from 'lit';
 import './iapau-test.js';
 
+import type { Story } from "../../stories/lib.js";
+
 export default {
   title: '<iapau-test>',
   component: 'iapau-test',
@@ -10,12 +12,6 @@ export default {
     textColor: { control: 'color' },
   },
 };
-
-interface Story<T> {
-  (args: T): TemplateResult;
-  args?: Partial<T>;
-  argTypes?: Record<string, unknown>;
-}
 
 interface ArgTypes {
   header?: string;

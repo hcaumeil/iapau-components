@@ -1,22 +1,18 @@
-import { html, TemplateResult } from 'lit';
-import './iapau-button.js';
+import { html, TemplateResult } from "lit";
+import "./iapau-button.js";
+
+import type { Story } from "../../stories/lib.js";
 
 export default {
-  title: '<iapau-button>',
-  component: 'iapau-button',
+  title: "<iapau-button>",
+  component: "iapau-button",
   argTypes: {
-    title: { control: 'text' },
-    textColor: { control: 'color' },
-    backgroundColor: { control: 'color' },
-    borderSolid: { control: 'boolean' },
+    title: { control: "text" },
+    textColor: { control: "color" },
+    backgroundColor: { control: "color" },
+    borderSolid: { control: "boolean" },
   },
 };
-
-interface Story<T> {
-  (args: T): TemplateResult;
-  args?: Partial<T>;
-  argTypes?: Record<string, unknown>;
-}
 
 interface ArgTypes {
   title?: string;
@@ -26,11 +22,12 @@ interface ArgTypes {
 }
 
 const Template: Story<ArgTypes> = ({
-  title = 'Test clique',
-  backgroundColor = 'rgba(14, 135, 105, 1)',
-  textColor ='rgba(255, 255, 255, 1)',
+  title = "Test clique",
+  backgroundColor = "rgba(14, 135, 105, 1)",
+  textColor = "rgba(255, 255, 255, 1)",
   borderSolid,
-}: ArgTypes) => html`
+}: ArgTypes) =>
+  html`
   <iapau-button
     .label=${title}
     .textColor=${textColor}

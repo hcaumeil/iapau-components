@@ -1,6 +1,8 @@
 import { html, TemplateResult } from 'lit';
 import './iapau-select.js';
 
+import type { Story } from "../../stories/lib.js";
+
 export default {
   title: '<iapau-select>',
   component: 'iapau-select',
@@ -8,12 +10,6 @@ export default {
     options : {control : 'array'}
   },
 };
-
-interface Story<T> {
-  (args: T): TemplateResult;
-  args?: Partial<T>;
-  argTypes?: Record<string, unknown>;
-}
 
 interface ArgTypes {
   options?: object;

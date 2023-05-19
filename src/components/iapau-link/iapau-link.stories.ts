@@ -1,6 +1,8 @@
 import { html, TemplateResult } from 'lit';
 import './iapau-link.js';
 
+import type { Story } from "../../stories/lib.js";
+
 export default {
   title: '<iapau-link>',
   component: 'iapau-link',
@@ -10,13 +12,6 @@ export default {
     title: { control: 'text' },
   },
 };
-
-interface Story<T> {
-  (args: T): TemplateResult;
-  args?: Partial<T>;
-  argTypes?: Record<string, unknown>;
-}
-
 
 interface ArgTypes {
   href?: string;
