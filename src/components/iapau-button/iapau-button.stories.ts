@@ -1,4 +1,4 @@
-import { ButtonSize } from "./iapau-button.js";
+import { ButtonMode, ButtonSize } from "./iapau-button.js";
 
 import { makeStory } from "../../stories/lib.js";
 
@@ -10,6 +10,22 @@ export default {
       control: "boolean",
       table: {
         defaultValue: { summary: false },
+      },
+    },
+    hoverColors: {
+      control: "boolean",
+      table: {
+        defaultValue: { summary: false },
+      },
+    },
+    mode: {
+      mapping: Object.values(ButtonMode),
+      options: Object.values(ButtonMode),
+      control: {
+        type: "select",
+      },
+      table: {
+        defaultValue: { summary: "primary" },
       },
     },
     size: {
@@ -25,7 +41,10 @@ export default {
   },
 };
 
-const baseItems = [{ innerHTML: "Click here" }];
+const baseItems = [{ innerHTML: "Primary", mode: "primary" }, {
+  innerHTML: "Secondary",
+  mode: "secondary",
+}];
 
 const conf = {
   component: "iapau-button",
@@ -38,6 +57,21 @@ const conf = {
 };
 
 export const Default = makeStory(conf, {
+  items: [{ innerHTML: "Click here" }],
+});
+
+export const solid_border = makeStory(conf, {
+  docs: `Use the \`solidBorder\` parameter to outline the button`,
+  items: baseItems.map((e) => ({...e , borderSolid:true})),
+});
+
+export const hover_colors = makeStory(conf, {
+  docs: `Use the \`hoverColors\` parameter to activate color reversion on hover`,
+  items: baseItems.map((e) => ({...e , hoverColors:true})),
+});
+
+export const mode = makeStory(conf, {
+  docs: `Use the \`mode\` parameter to switch button mode`,
   items: baseItems,
 });
 
