@@ -29,15 +29,6 @@ export default class IapauButton extends LitElement {
   @property({ type: Function })
   onclick = () => {};
 
-  updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has("borderSolid")) {
-      this.style.setProperty(
-        "--button-border",
-        this.borderSolid ? "3px solid" : "none",
-      );
-    }
-  }
-
   _onClick = () => {
     this.onclick();
   };
@@ -47,8 +38,8 @@ export default class IapauButton extends LitElement {
       display: flex;
       justify-content: center; /* Align horizontal */
       align-items: center;      
-      border: var(--button-border);
       border-radius: 0.5rem;
+      border: none;
       transition: 0.6s;
       font-family: var(--iapau-font-family-default);
       font-weight: 600;
@@ -56,6 +47,10 @@ export default class IapauButton extends LitElement {
 
     button:hover{
       box-shadow: 0 1px 5px rgb(0 0 0 / 40%);    
+    }
+
+    .border_solid {
+      border : 3px solid;
     }
 
     .sm {
@@ -102,7 +97,8 @@ export default class IapauButton extends LitElement {
   `;
 
   render() {
-    const size = {
+    const classes = {
+      border_solid: this.borderSolid,
       sm: this.size as ButtonSize === ButtonSize.SM,
       md: this.size as ButtonSize === ButtonSize.MD,
       lg: this.size as ButtonSize === ButtonSize.LG,
@@ -111,12 +107,11 @@ export default class IapauButton extends LitElement {
       secondary: this.mode as ButtonMode == ButtonMode.secondary,
       secondary_hover: this.mode as ButtonMode == ButtonMode.secondary && this.hoverColors,
     };
-    console.log(this.size as ButtonSize === ButtonSize.MD);
 
     return html`
       <button
       @click="${this._onClick}"         
-      class=${classMap(size)}
+      class=${classMap(classes)}
       >
       <slot/>
       </button>
