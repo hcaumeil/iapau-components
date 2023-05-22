@@ -1,5 +1,6 @@
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
+import { classMap } from "lit/directives/class-map.js";
 
 
 export default class IapauTextarea extends LitElement {
@@ -11,6 +12,11 @@ export default class IapauTextarea extends LitElement {
       padding: 14px;
       overflow: hidden;
       font-family: var(--iapau-font-family-default);
+      resize: none;
+    }
+
+    .textarea_resizable{
+      resize: both;
     }
   `;
 
@@ -23,9 +29,21 @@ export default class IapauTextarea extends LitElement {
   @property({ type: String })
   placeholder = 'Cliquez ici';
 
+  @property({ type: Boolean })
+  resize = false;
+
   render() {
+    const classes = {
+      textarea_resizable :this.resize,
+    };
+
     return html`
-      <textarea placeholder='${this.placeholder}' rows="${this.rows}" cols="${this.cols}"></textarea>
+      <textarea
+                placeholder='${this.placeholder}'
+                rows="${this.rows}"
+                cols="${this.cols}"
+                class=${classMap(classes)}
+      ></textarea>
     `;
   }
 }

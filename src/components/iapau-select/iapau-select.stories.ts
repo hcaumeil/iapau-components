@@ -1,4 +1,3 @@
-import { html, TemplateResult } from 'lit';
 import './iapau-select.js';
 
 import { makeStory } from "../../stories/lib.js";

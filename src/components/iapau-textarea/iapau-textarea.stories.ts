@@ -1,5 +1,4 @@
-import { html, TemplateResult } from "lit";
-import "./iapau-textarea";
+import "./iapau-textarea.js";
 
 import { makeStory } from "../../stories/lib.js";
 
@@ -7,6 +6,12 @@ export default {
   title: "<iapau-textarea>",
   component: "iapau-textarea",
   argTypes: {
+    resize: {
+      control: "boolean",
+      table: {
+        defaultValue: { summary: false },
+      },
+    },
     placeholder: { control: "text" },
     cols: { control: "number" },
     rows: { control: "number" },
@@ -26,5 +31,5 @@ const conf = {
 };
 
 export const Default = makeStory(conf, {
-  items: baseItems,
+    items: baseItems.map((e) => ({...e , resize:false})),
 });
