@@ -6,10 +6,11 @@ export default class IapauTextarea extends LitElement {
   static styles = css`
     textarea {
       border: none;
-      box-shadow: 0 12px 18px -10px rgba(0,0,0,0.3);
+      box-shadow: 0px 10px 40px 0px rgba(0,0,0,0.32);
       border-radius: 15px;
       padding: 14px;
       overflow: hidden;
+      font-family: var(--iapau-font-family-default);
     }
   `;
 

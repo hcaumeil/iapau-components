@@ -28,7 +28,7 @@ export default class IapauCard extends LitElement {
     :host {
       width: auto;
       height: auto;
-      color: --iapau-color-bg-default;
+      background-color: var(--iapau-color-bg-default);
       box-shadow: 0px 10px 40px 0px rgba(0,0,0,0.32);
       border-radius: 0.5rem;
       transition: 0.4s ease;
