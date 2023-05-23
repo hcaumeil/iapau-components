@@ -3,6 +3,12 @@ import { property } from "lit/decorators.js";
 
 
 export default class IapauInput extends LitElement {
+
+  onChange = () => {
+    // @ts-ignore
+    this.onchange();
+  }
+
   static styles = css`
     input {
       border: none;
@@ -21,15 +27,13 @@ export default class IapauInput extends LitElement {
   @property({ type: String })
   typeInput = 'text';
 
-  _onChange = () => {
-    this.onchange();
-  };
+
 
   render() {
 
     return html`
       <input type=${this.typeInput}
-             @change="${this._onChange}"
+             @change="${this.onChange}"
                 placeholder=${this.placeholder}
       />
     `;
@@ -37,3 +41,4 @@ export default class IapauInput extends LitElement {
 }
 
 window.customElements.define('iapau-input', IapauInput);
+
