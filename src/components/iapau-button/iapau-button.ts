@@ -37,7 +37,7 @@ export default class IapauButton extends LitElement {
     button {
       display: flex;
       justify-content: center; /* Align horizontal */
-      align-items: center;      
+      align-items: center;
       border-radius: 0.5rem;
       border: none;
       transition: 0.6s;
@@ -46,7 +46,7 @@ export default class IapauButton extends LitElement {
     }
 
     button:hover{
-      box-shadow: 0 1px 5px rgb(0 0 0 / 40%);    
+      box-shadow: 0 1px 5px rgb(0 0 0 / 40%);
     }
 
     .border_solid {
@@ -54,16 +54,16 @@ export default class IapauButton extends LitElement {
     }
 
     .sm {
-      font-size: .875rem;      
-      min-height: 2rem; 
-      height: 2rem; 
-      padding: .25rem .75rem;    
+      font-size: .875rem;
+      min-height: 2rem;
+      height: 2rem;
+      padding: .25rem .75rem;
     }
 
     .md {
-      font-size: 1rem;      
-      min-height: 2.5rem; 
-      height: 2.5rem; 
+      font-size: 1rem;
+      min-height: 2.5rem;
+      height: 2.5rem;
       padding: .5rem 1.25rem;
     }
 
@@ -93,7 +93,7 @@ export default class IapauButton extends LitElement {
       color: var(--iapau-color-bg-default);
       background-color: var(--iapau-color-bg-primary);
     }
-  
+
   `;
 
   render() {
@@ -102,15 +102,15 @@ export default class IapauButton extends LitElement {
       sm: this.size as ButtonSize === ButtonSize.SM,
       md: this.size as ButtonSize === ButtonSize.MD,
       lg: this.size as ButtonSize === ButtonSize.LG,
-      primary: this.mode as ButtonMode == ButtonMode.primary,
-      primary_hover: this.mode as ButtonMode == ButtonMode.primary && this.hoverColors,
-      secondary: this.mode as ButtonMode == ButtonMode.secondary,
-      secondary_hover: this.mode as ButtonMode == ButtonMode.secondary && this.hoverColors,
+      primary: this.mode as ButtonMode === ButtonMode.primary,
+      primary_hover: this.mode as ButtonMode === ButtonMode.primary && this.hoverColors,
+      secondary: this.mode as ButtonMode === ButtonMode.secondary,
+      secondary_hover: this.mode as ButtonMode === ButtonMode.secondary && this.hoverColors,
     };
 
     return html`
       <button
-      @click="${this._onClick}"         
+      @click="${this._onClick}"
       class=${classMap(classes)}
       >
       <slot/>
