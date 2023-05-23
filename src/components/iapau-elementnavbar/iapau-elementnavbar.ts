@@ -21,8 +21,14 @@ export default class IapauElementnavbar extends LitElement {
   @property({ type: String })
   src = "icon";
 
+  @property({ type: Boolean })
+  showMenu = true;
+
 
   render() {
+
+    const title = this.showMenu ? '' : 'title';
+
     return html`
 
       <div class='element'>
@@ -33,7 +39,7 @@ export default class IapauElementnavbar extends LitElement {
 
         <div class='title'>
           <iapau-link>
-            <slot name='title' style="width: 1vw">
+            <slot name='${title}' style="width: 1vw">
             </slot>
           </iapau-link>
 

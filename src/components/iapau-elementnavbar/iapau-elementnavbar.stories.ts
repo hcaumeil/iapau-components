@@ -6,6 +6,13 @@ export default {
   title: "<iapau-elementnavbar>",
   component: "iapau-elementnavbar",
   argTypes: {
+    showMenu: {
+      control: "boolean",
+      table: {
+        defaultValue: { summary: true },
+      },
+    },
+
     src: {
       control: "text",
       table: {
@@ -29,5 +36,5 @@ const conf = {
 };
 
 export const Default = makeStory(conf, {
-  items: baseItems,
+  items: baseItems.map((e) => ({...e , showMenu:true})),
 });
