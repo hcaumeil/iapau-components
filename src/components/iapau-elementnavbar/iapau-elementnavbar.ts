@@ -1,5 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import "./iapau-link.js";
+
 
 
 
@@ -26,12 +28,15 @@ export default class IapauElementnavbar extends LitElement {
       <div class='element'>
 
         <div class='icon'>
-            <img style="width: 1vw" src="${this.src}" alt="Icon">
+          <img style="width: 1vw" src="${this.src}" alt="Icon">
         </div>
 
         <div class='title'>
-            <slot name='title' style="width: 1vw" >
+          <iapau-link>
+            <slot name='title' style="width: 1vw">
             </slot>
+          </iapau-link>
+
         </div>
 
       </div>
