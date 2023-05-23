@@ -5,7 +5,6 @@ import { property } from "lit/decorators.js";
 export default class IapauInput extends LitElement {
 
   onChange = () => {
-    // @ts-ignore
     this.onchange();
   }
 
@@ -17,12 +16,14 @@ export default class IapauInput extends LitElement {
       padding: 14px;
       overflow: hidden;
       font-family: var(--iapau-font-family-default);
+      width: 100%;
     }
 
   `;
 
   @property({ type: String })
   placeholder = 'texte';
+
 
   @property({ type: String })
   typeInput = 'text';
