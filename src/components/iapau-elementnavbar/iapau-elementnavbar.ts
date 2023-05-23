@@ -1,6 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
-import "./iapau-link.js";
+import "../iapau-link/iapau-link.js";
 
 
 
