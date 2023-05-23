@@ -4,9 +4,9 @@ import { property } from "lit/decorators.js";
 
 export default class IapauInput extends LitElement {
 
-  onChange = () => {
-    this.onchange();
-  }
+  _onChange = () => {
+    this.onChange();
+  };
 
   static styles = css`
     input {
@@ -25,16 +25,19 @@ export default class IapauInput extends LitElement {
   placeholder = 'texte';
 
 
+
   @property({ type: String })
   typeInput = 'text';
 
+  @property({ type: Function })
+  onChange = () =>{};
 
 
   render() {
 
     return html`
       <input type=${this.typeInput}
-             @change="${this.onChange}"
+             @change="${this._onChange}"
                 placeholder=${this.placeholder}
       />
     `;
