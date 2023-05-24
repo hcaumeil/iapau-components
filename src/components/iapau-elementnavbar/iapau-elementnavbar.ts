@@ -14,6 +14,9 @@ export default class IapauElementnavbar extends LitElement {
   @property({ type: Boolean })
   showMenu = false;
 
+  @property({ type: String })
+  href = ".";
+
 
   static styles = css`
     .element {
@@ -45,18 +48,18 @@ export default class IapauElementnavbar extends LitElement {
     return html`
 
       <div class='element'>
-
+        <iapau-link href='${this.href}'>
         <div class='icon'>
           <img style="width: 1vw" src="${this.src}" alt="Icon">
         </div>
 
         <div class='title ${classMap(classes)}'>
-          <iapau-link>
             <slot style="width: 1vw">
             </slot>
-          </iapau-link>
 
         </div>
+
+        </iapau-link>
 
       </div>
     `;
@@ -64,5 +67,3 @@ export default class IapauElementnavbar extends LitElement {
 }
 
 window.customElements.define('iapau-elementnavbar', IapauElementnavbar);
-
-

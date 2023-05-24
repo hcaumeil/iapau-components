@@ -19,11 +19,17 @@ export default {
         defaultValue: { summary: "." },
       },
     },
+    href: {
+      control: "text",
+      table: {
+        defaultValue: { summary: "." },
+      },
+    },
 
   },
 };
 
-const baseItems = [{ innerHTML: "Link", src: "https://cdn-icons-png.flaticon.com/512/4436/4436481.png" }];
+const baseItems = [{ innerHTML: "Link", src: "https://cdn-icons-png.flaticon.com/512/4436/4436481.png",  href: "." }];
 
 const conf = {
   component: "iapau-elementnavbar",
