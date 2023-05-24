@@ -28,7 +28,6 @@ export default class IapauInput extends LitElement {
 
   @property({ type: String })
   typeInput = 'text';
-
   @property({ type: Function })
   onChange = () =>{};
 

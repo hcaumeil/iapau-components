@@ -17,7 +17,7 @@ export default class IapauLink extends LitElement {
     }
 
     .active {
-      color: var(--iapau-color-link-active)  
+      color: var(--iapau-color-link-active)
     }
   `;
 

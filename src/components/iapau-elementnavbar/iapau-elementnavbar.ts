@@ -1,6 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 import "../iapau-link/iapau-link.js";
+import { classMap } from "lit/directives/class-map.js";
 
 
 
@@ -15,6 +16,10 @@ export default class IapauElementnavbar extends LitElement {
       display: inline-block;
       vertical-align: middle;
     }
+
+    .show_menu{
+      display: none;
+    }
   `;
 
 
@@ -22,12 +27,13 @@ export default class IapauElementnavbar extends LitElement {
   src = "icon";
 
   @property({ type: Boolean })
-  showMenu = true;
+  showMenu = false;
 
 
   render() {
-
-    const title = this.showMenu ? '' : 'title';
+    const classes = {
+      show_menu : this.showMenu
+    }
 
     return html`
 
@@ -37,9 +43,9 @@ export default class IapauElementnavbar extends LitElement {
           <img style="width: 1vw" src="${this.src}" alt="Icon">
         </div>
 
-        <div class='title'>
+        <div class='title ${classMap(classes)}'>
           <iapau-link>
-            <slot name='${title}' style="width: 1vw">
+            <slot class  style="width: 1vw">
             </slot>
           </iapau-link>
 
