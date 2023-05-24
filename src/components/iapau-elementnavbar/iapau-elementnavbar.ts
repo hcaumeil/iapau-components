@@ -7,21 +7,6 @@ import { classMap } from "lit/directives/class-map.js";
 
 
 export default class IapauElementnavbar extends LitElement {
-  static styles = css`
-    .element {
-      line-height: 1;
-    }
-
-    .icon, .title {
-      display: inline-block;
-      vertical-align: middle;
-    }
-
-    .show_menu{
-      display: none;
-    }
-  `;
-
 
   @property({ type: String })
   src = "icon";
@@ -29,6 +14,28 @@ export default class IapauElementnavbar extends LitElement {
   @property({ type: Boolean })
   showMenu = false;
 
+
+  static styles = css`
+    .element {
+      line-height: 1;
+    }
+
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .title{
+      display: none;
+    }
+
+    .show_menu{
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+
+  `;
 
   render() {
     const classes = {
@@ -45,7 +52,7 @@ export default class IapauElementnavbar extends LitElement {
 
         <div class='title ${classMap(classes)}'>
           <iapau-link>
-            <slot class  style="width: 1vw">
+            <slot style="width: 1vw">
             </slot>
           </iapau-link>
 
