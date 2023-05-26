@@ -5,9 +5,11 @@ export default class IapauSelect extends LitElement {
   static styles = css`
     select {
       border-radius: 15px;
-      box-shadow: 0 12px 18px -10px rgba(0,0,0,0.3);
+      box-shadow: 0 12px 18px -10px rgba(0, 0, 0, 0.3);
       padding: 16px 20px 16px 16px;
       border: none;
+      background-color: #ffffff;
+      outline: 0;
     }
   `;
 
