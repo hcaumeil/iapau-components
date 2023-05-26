@@ -5,7 +5,7 @@ export default class IapauSelect extends LitElement {
   static styles = css`
     select {
       border-radius: 15px;
-
+      color: rgba(0,0,0,0.5);
       box-shadow: 0px 10px 40px 0px rgba(0,0,0,0.32);
       padding: 16px 20px 16px 16px;
       border: none;
