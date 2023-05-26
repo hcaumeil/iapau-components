@@ -1,4 +1,3 @@
-
 import { makeStory } from "../../stories/lib.js";
 import "./iapau-input.js"
 
@@ -7,7 +6,9 @@ export default {
   component: "iapau-input",
   argTypes: {
     placeholder: { control: "text" },
+    label: { control: "text" },
     typeInput: { control: "text" },
+    error: { control: "text" },
   },
 };
 
