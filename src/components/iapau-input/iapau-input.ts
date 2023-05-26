@@ -4,9 +4,7 @@ import { classMap } from "lit/directives/class-map.js";
 
 export default class IapauInput extends LitElement {
   _onChange = (e: any) => {
-    if (e.target) {
-      this.onChange(e.target.value);
-    }
+    this.onChange(e);
   };
 
   static styles = css`
