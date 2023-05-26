@@ -3,9 +3,6 @@ import { property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 
 export default class IapauInput extends LitElement {
-  _onChange = (e: any) => {
-    this.onChange(e);
-  };
 
   static styles = css`
     input {
@@ -43,7 +40,11 @@ export default class IapauInput extends LitElement {
   typeInput = "text";
 
   @property({ type: Function })
-  onChange: (e: Event) => void = () => {};
+  oninput: (e: any) => void = () => {};
+
+  _onInput(event: any) {
+    this.oninput(event.target.value);
+  }
 
   _label() {
     if (this.label) {
@@ -76,7 +77,7 @@ export default class IapauInput extends LitElement {
       classMap(classes)
     }>
       <input type=${this.typeInput}
-             @change="${this._onChange}"
+              @input="${this._onInput}"
                 placeholder=${this.placeholder}
       />
       </div>
