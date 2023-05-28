@@ -19,11 +19,22 @@ export default class IapauSelect extends LitElement {
   @property({ type: Array })
   options = [];
 
+  @property({ type: String})
+  label = "Options"
+
+  @property({ type: Function })
+  oninput: (e: any) => void = () => {};
+
+  _onInput(event: any) {
+    this.oninput(event.target.value);
+  }
+
   render() {
     return html`
       <div style="margin: 5px; padding: 5px;  display: flex; width: 100%; border-radius: 15px;">
-      <select>
-        <option value='' hidden> Choix d'option </option>
+              
+      <select @input="${this._onInput}" >
+        <option value='' hidden> ${this.label} </option>
         ${this.options.map((option) => html`<option>${option}</option>`)}
       </select>
       </div>

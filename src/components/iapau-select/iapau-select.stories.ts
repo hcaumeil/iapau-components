@@ -6,7 +6,8 @@ export default {
   title: '<iapau-select>',
   component: 'iapau-select',
   argTypes: {
-    options : {control : 'array'}
+    options : {control : 'array'},
+    label : {control : 'text'}
   },
 };
 
