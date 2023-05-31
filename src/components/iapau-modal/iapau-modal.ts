@@ -39,7 +39,6 @@ export default class IapauModal extends LitElement {
   render() {
     const cssClass = {
       modal: true,
-      "modal-open": this.isOpen,
     };
 
     return html`
