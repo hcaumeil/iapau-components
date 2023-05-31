@@ -32,6 +32,13 @@ export default class IapauTextarea extends LitElement {
   @property({ type: Boolean })
   resize = false;
 
+  @property({ type: Function })
+  oninput: (e: any) => void = () => {};
+
+  _onInput(event: any) {
+    this.oninput(event.target.value);
+  }
+
   render() {
     const classes = {
       textarea_resizable :this.resize,
@@ -42,6 +49,7 @@ export default class IapauTextarea extends LitElement {
                 placeholder='${this.placeholder}'
                 rows="${this.rows}"
                 cols="${this.cols}"
+                @input="${this._onInput}"
                 class=${classMap(classes)}
       ></textarea>
     `;
