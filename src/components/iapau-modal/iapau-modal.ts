@@ -36,11 +36,8 @@ export default class IapauModal extends LitElement {
   @property({ type: String })
   title = "test";
 
-  @property({ type: Function })
-  oninput: (e: any) => void = () => {};
-
-  _onInput(event: any) {
-    this.oninput(event.target.value);
+  _toggleModalB() {
+    this.modalB = !this.modalB;
   }
 
   render() {
@@ -55,6 +52,9 @@ export default class IapauModal extends LitElement {
           <h2>${this.title}</h2>
           <div>
             <slot></slot>
+            <button class="close-button" @click="${this._toggleModalB}">
+              Close
+            </button>
           </div>
         </div>
       </div>
