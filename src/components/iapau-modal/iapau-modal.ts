@@ -5,6 +5,7 @@ import { classMap } from "lit/directives/class-map.js";
 export default class IapauModal extends LitElement {
   static styles = css`
     .modal {
+      z-index: 1;
       position: fixed;
       top: 0;
       left: 0;
