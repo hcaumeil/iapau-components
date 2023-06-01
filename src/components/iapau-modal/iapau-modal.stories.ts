@@ -6,6 +6,7 @@ export default {
   component: "iapau-modal",
   argTypes: {
     title: { control: "text" },
+    modalB: { control: "boolean" },
   },
 };
 

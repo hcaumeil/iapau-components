@@ -21,10 +21,17 @@ export default class IapauModal extends LitElement {
       padding: 20px;
       border-radius: 4px;
     }
+
+    .hidden {
+      display: none;
+    }
   `;
 
   @property({ type: Boolean })
   isOpen = false;
+
+  @property({ type: Boolean })
+  modalB = false;
 
   @property({ type: String })
   title = "test";
@@ -38,7 +45,8 @@ export default class IapauModal extends LitElement {
 
   render() {
     const cssClass = {
-      modal: true,
+      modal: this.modalB,
+      hidden: !this.modalB,
     };
 
     return html`
@@ -46,11 +54,7 @@ export default class IapauModal extends LitElement {
         <div class="modal-content">
           <h2>${this.title}</h2>
           <div>
-            <label>Input Text:</label>
-            <input
-              type="text"
-              @input="${this._onInput}"
-            />
+            <slot></slot>
           </div>
         </div>
       </div>
